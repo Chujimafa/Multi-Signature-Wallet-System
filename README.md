@@ -1,36 +1,61 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# 🛡️ Multi-Signature Wallet System with Safe SDK + Thirdweb Integration
 
-## Getting Started
+This project implements a robust multi-signature wallet system for managing a corporate treasury using the **Safe SDK** and **Thirdweb SDK**. It combines advanced concepts from decentralized application development and secure asset management, offering enhanced governance, transaction control, and social recovery features.
 
-First, run the development server:
+---
 
-```bash
+## 🚀 Features
+
+### 1. Multi-Signature Safe Wallet Creation
+- Create a Safe wallet with a configurable list of owners and a threshold (number of required approvals).
+- Built using `@safe-global/protocol-kit` and integrated with Thirdweb's wallet connection system.
+
+### 2. Safe Transaction Threshold Checker
+- Automatically detect and enforce multi-tier transaction approval logic:
+  - **Routine Transactions (<10 ETH):** Require 2 of 4 signatures.
+  - **large Transactions (10–100 ETH):** Require 3 of 4 signatures.
+  - **Critical Transactions (>100 ETH or Owner changes):** Require 4 of 4 signatures (unanimous).
+- This component checks the Safe's on-chain configuration and enforces the appropriate threshold before execution.
+
+### 3. Social Recovery System
+- Implements a **Guardian-based social recovery** module inspired by [Candide's social recovery mechanism](https://docs.candide.dev/wallet/plugins/recovery-with-guardians/).
+- Allows wallet recovery through trusted guardians after a time-locked delay (e.g., 7 days).
+
+---
+
+## 🧱 Tech Stack
+
+- **React (Next.js App)**
+- **Thirdweb SDK** – wallet connection, chain access
+- **Safe SDK (Protocol Kit)** – Safe deployment and management
+
+
+
+## 🔧 Getting Started
+
+### 1. Clone the Repository
+
+git clone https://github.com/yourusername/multisig-wallet-app.git
+cd multisig-wallet-app
+
+### 2. Install Dependencies
+
+npm install
+#### or
+yarn install
+
+### 3. Configure Environment Variables
+Create a .env.local file and add your Thirdweb Client ID:
+
+NEXT_PUBLIC_THIRDWEB_CLIENT_ID=your_thirdweb_client_id
+
+### 4. Run the Development Server
+
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+#### or
+yarn run dev
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### 📸 Preview
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+![Application Screenshot](./assets/screenshot.png)
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
