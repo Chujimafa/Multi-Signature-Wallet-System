@@ -37,8 +37,7 @@ This project implements a robust multi-signature wallet system for managing a co
 
 ### 1. Clone the Repository
 
-git clone https://github.com/Chujimafa/Multi-Signature-Wallet-System
-cd multisig-wallet-app
+git clone https://github.com/Chujimafa/Multi-Signature-Wallet-System.git
 
 ### 2. Install Dependencies
 
