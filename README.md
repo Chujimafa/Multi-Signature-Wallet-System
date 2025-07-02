@@ -4,6 +4,8 @@ This project implements a robust multi-signature wallet system for managing a co
 
 ---
 
+**GitHub Repository**: [https://github.com/Chujimafa/Multi-Signature-Wallet-System]
+
 ## 🚀 Features
 
 ### 1. Multi-Signature Safe Wallet Creation
@@ -35,7 +37,7 @@ This project implements a robust multi-signature wallet system for managing a co
 
 ### 1. Clone the Repository
 
-git clone https://github.com/yourusername/multisig-wallet-app.git
+git clone https://github.com/Chujimafa/Multi-Signature-Wallet-System
 cd multisig-wallet-app
 
 ### 2. Install Dependencies
